@@ -107,20 +107,20 @@ func TestFineTuningJob(t *testing.T) {
 
 	_, err = client.ListFineTuningJobs(
 		ctx,
-		ListFineTuningJobsWithAfter("last-event-id"),
+		openai.ListFineTuningJobsWithAfter("last-event-id"),
 	)
 	checks.NoError(t, err, "ListFineTuningJobs error")
 
 	_, err = client.ListFineTuningJobs(
 		ctx,
-		ListFineTuningJobsWithLimit(10),
+		openai.ListFineTuningJobsWithLimit(10),
 	)
 	checks.NoError(t, err, "ListFineTuningJobs error")
 
 	_, err = client.ListFineTuningJobs(
 		ctx,
-		ListFineTuningJobsWithAfter("last-event-id"),
-		ListFineTuningJobsWithLimit(10),
+		openai.ListFineTuningJobsWithAfter("last-event-id"),
+		openai.ListFineTuningJobsWithLimit(10),
 	)
 	checks.NoError(t, err, "ListFineTuningJobs error")
 }

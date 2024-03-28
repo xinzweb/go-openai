@@ -59,6 +59,8 @@ type FineTuningJobsList struct {
 	Object  string          `json:"object"`
 	Data    []FineTuningJob `json:"data"`
 	HasMore bool            `json:"has_more"`
+
+	httpHeader
 }
 
 // CreateFineTuningJob create a fine tuning job.
